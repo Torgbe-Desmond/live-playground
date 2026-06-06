@@ -1,4 +1,5 @@
 import { io } from "socket.io-client";
+import { baseURL } from "./api";
 
 let socket = null;
 
@@ -7,7 +8,7 @@ export const getSocket = () => socket;
 export const connectSocket = (userId, username) => {
   if (socket?.connected) return socket;
 
-  socket = io(process.env.REACT_APP_SOCKET_URL || "http://localhost:5000", {
+  socket = io(baseURL, {
     query: { userId, username },
     transports: ["websocket"],
   });

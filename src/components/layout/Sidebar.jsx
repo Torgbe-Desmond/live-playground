@@ -38,8 +38,6 @@ export default function Sidebar({ onClose }) {
     0,
   );
 
-  console.log("totalUnreadMessages", totalUnreadMessages);
-
   const handleNav = (path) => {
     navigate(path);
     onClose?.();
